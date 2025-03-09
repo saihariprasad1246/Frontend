@@ -31,7 +31,7 @@ function Home() {
       const [startIndex,endIndex]=getIndexes(pageNo,10)
 
       setTotalCoupons(data.length || 0);
-      
+      data=data.slice(startIndex,endIndex)
       //console.log(data,startIndex,endIndex)
       setCoupons(data);
       
@@ -45,7 +45,7 @@ function Home() {
 
   useEffect(() => {
     fetchCoupons();
-  }, [searchParams]);
+  }, [searchParams.get('pageNo'),searchParams.get('search')]);
 
   return (
     <>

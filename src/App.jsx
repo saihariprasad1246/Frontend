@@ -51,7 +51,7 @@ function App() {
       </div>
 
       {/* Main Content */}
-      <div className="pt-20"> {/* Adjusted padding to prevent content from hiding behind navbar */}
+      <div className="pt-30 md:pt-20"> {/* Adjusted padding to prevent content from hiding behind navbar */}
         <Routes>
           <Route exact  path="/Frontend/" element={<Home />} />
           <Route exact path="/Frontend/description/:id" element={<Coupondescription />} />

@@ -19,7 +19,7 @@ const CouponCard = ({ image, title, description, id }) => {
           />
         </div>
         <div className="text-center">
-          <h2 className="text-xl font-bold text-gray-800">{title}</h2>
+          <h2 className="text-md font-bold text-gray-800">{title.slice(11,title.length)}</h2>
           <p className="text-gray-600 text-sm mt-1">{description}</p>
         </div>
         <div className="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:scale-110 transition-transform duration-300">

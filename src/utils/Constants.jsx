@@ -2,6 +2,8 @@ import axios from "axios";
 
 export const Backend_Url="http://127.0.0.1:3030";
 
+const raw_Url='https://raw.githubusercontent.com/saihariprasad1246/coupons/refs/heads/main/courses.json'
+
 export const Categories=[
     "Business",
     "Design",
@@ -30,8 +32,8 @@ export const Categories=[
 
 export async function getData(){
   try{
-      const response = await axios.get('https://raw.githubusercontent.com/saihariprasad1246/coupons/refs/heads/main/courses.json');
-      const data = response.data
+      const response = await axios.get(raw_Url);
+      const data = response.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
 
       console.log(data);
       return data;

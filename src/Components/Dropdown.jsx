@@ -34,7 +34,7 @@ function DropdownMenu({setSearch}) {
                     {links.map((link, index) => (
                         <Link
                             key={index}
-                            to={`/Frontend/category${link.url}`}
+                            to={`./Frontend/category${link.url}`}
                             className="block px-4 py-2 text-gray-700 hover:bg-blue-100 rounded-md"
                         >
                             {link.name}

@@ -19,7 +19,7 @@ function Coupondescription() {
       setLoading(true);
      // const response = await axios.get(`${Backend_Url}/description/${id}`);
      let data= await getData();
-     data=data.filter(coupon=>coupon.courseId==id)
+     data=data.filter(coupon=>coupon._id==id)
      data=data[0]
       setcoupondetails(data);
     } catch (err) {

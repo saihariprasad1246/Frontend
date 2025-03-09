@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function Pagination({ totalCoupons }) {
-  const [currentPage, setCurrentPage] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [currentPage, setCurrentPage] = useState(1);
+  
   const location = useLocation().pathname;
   const totalPages = Math.ceil(totalCoupons / 10);
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
@@ -18,6 +19,11 @@ function Pagination({ totalCoupons }) {
       setSearchParams({ pageNo: page });
     }
   };
+
+useEffect(()=>{
+  const page = searchParams.get("pageNo") || 1;
+  setCurrentPage(page);
+},[])
 
   return (
     <div className="flex flex-wrap items-center justify-center space-x-2 sm:space-x-3 py-4">

@@ -4,6 +4,7 @@ import NoCoupons from './NoCoupons'
 import CouponCard from './CouponCard'
 
 function DisplayCoupons({ loading, coupons, error }) {
+  console.log(coupons)
   return (
     <>
       {loading ? (
@@ -16,14 +17,14 @@ function DisplayCoupons({ loading, coupons, error }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  mx-auto max-w-7xl">
           {coupons.map((coupon) => (
             <div
-              key={coupon.courseId}
-              className=" shadow-lg  hover:shadow-2xl transition-shadow duration-300 flex flex-col "
+              key={coupon._id}
+              className=" hover:shadow-2xl transition-shadow duration-300 flex flex-col "
             >
               <CouponCard
                 image={coupon.imgSrc}
                 title={coupon.name}
                 description={coupon.description}
-                id={coupon.courseId}
+                id={coupon._id}
                 className="h-full"
               />
             </div>
